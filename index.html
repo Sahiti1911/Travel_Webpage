@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>travel website </title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        .openBtn {
+          display: flex;
+        }
+        .openButton {
+          align-items: center;
+          align-content: center;
+          align-self: center;
+          border: none;
+          border-radius: 5px;
+          background-color: #1c87c9;
+          color: white;
+          padding: 10px 5px;
+          cursor: pointer;
+          position: relative;
+        }
+        .loginPopup {
+          position: relative;
+          text-align: center;
+          width: 100%;
+          border-radius: 7px;
+        }
+        .formPopup {
+          display: none;
+          position:fixed;
+          left: 45%;
+          top: 17%;
+          transform: translate(-50%, 5%);
+          border: 3px solid #999999;
+          border-radius: 7px;
+          z-index: 9;
+        }
+        .formContainer {
+          max-width: 300px;
+          padding: 20px;
+          border: 8px;
+          background-color: #fff;
+        }
+        .formContainer input[type=text],
+        .formContainer input[type=password] {
+          width: 100%;
+          padding: 15px;
+          margin: 5px 0 20px 0;
+          border: none;
+          border-radius: 7px;
+
+          background: #eee;
+        }
+        .formContainer input[type=text]:focus,
+        .formContainer input[type=password]:focus {
+          background-color: #ddd;
+          outline: none;
+          border-radius: 7px;
+
+        }
+        .formContainer .btn {
+          padding: 12px 20px;
+          border: none;
+          background-color: #8ebf42;
+          color: #fff;
+          cursor: pointer;
+          width: 100%;
+          margin-bottom: 15px;
+          opacity: 0.8;
+        }
+        .formContainer .cancel {
+          background-color: #cc0000;
+        }
+        .formContainer .btn:hover,
+        .openButton:hover {
+          opacity: 1;
+        }
+        #gen
+        {
+            color:#666 ;
+            font-size: 1.5rem;
+        }
+
+      </style>
+      <script>
+        $(document).ready(function(){
+          $("button").click(function(){
+            $("#div1").fadeOut();
+          });
+        });
+        </script>
+
+</head>
+<body>
+    
+    <div class="openBtn">
+      <button class="openButton" onclick="openForm()"><strong>Open Form</strong></button>
+    </div>
+    <div class="loginPopup">
+      <div class="formPopup" id="popupForm">
+        <form action="../action_page.php" class="formContainer">
+          <h2>Please Log in</h2>
+          <label for="email">
+            <strong>E-mail</strong>
+          </label>
+          <input type="text" id="email" placeholder="Your Email" name="email" required>
+          <label for="psw">
+            <strong>Password</strong>
+          </label>
+          <input type="password" id="psw" placeholder="Your Password" name="psw" required>
+          <button type="submit" class="btn">Log in</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      function openForm() {
+        document.getElementById("popupForm").style.display = "block";
+      }
+      function closeForm() {
+        document.getElementById("popupForm").style.display = "none";
+      }
+    </script>
+<!-- header section starts  -->
+
+<header>
+
+    <div id="menu-bar" class="fas fa-bars"></div>
+
+    <a href="#" class="logo"><span>L</span>et's<span> G</span>oooo.....</a>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#book">Register</a>
+        <a href="#packages">packages</a>
+        <a onclick="openForm()">Login</a>
+        <a href="table.html">Price Chart</a>
+    </nav>
+
+    <div class="icons">
+        <div class="openBtn">
+            <button class="openButton" onclick="openForm()"><i class="fas fa-user" id="login-btn"></i>
+            </button></div>
+
+    </div>
+
+    <form action="" class="search-bar-container">
+        <input type="search" id="search-bar" placeholder="search here...">
+        <label for="search-bar" class="fas fa-search"></label>
+    </form>
+
+</header>
+
+<!-- header section ends -->
+
+
+<!-- login form container  -->
+
+<div class="login-form-container">
+
+    <i class="fas fa-times" id="form-close"></i>
+
+    <form action="">
+        <h3>login</h3>
+        <input type="email" class="box" placeholder="enter your email">
+        <input type="password" class="box" placeholder="enter your password">
+        <input type="submit" value="login now" class="btn">
+        <input type="checkbox" id="remember">
+        <label for="remember">remember me</label>
+        <p>forget password? <a href="#">click here</a></p>
+        <p>don't have and account? <a href="#">register now</a></p>
+    </form>
+
+</div>
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content">
+        <h3>adventure is worthwhile</h3>
+        <p>dicover new places with us, adventure awaits</p>
+    </div>
+
+
+    <div class="video-container">
+        <video src="images/India.mp4" id="video-slider" loop autoplay muted></video>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- Registration section starts  -->
+
+<section class="book" id="book">
+
+    <h1 class="heading">
+        <span>R</span>
+        <span>e</span>
+        <span>g</span>
+        <span>i</span>
+        <span>s</span>
+        <span>t</span>
+        <span>e</span>
+        <span>r</span>
+        <span class="space"></span>
+        <span>n</span>
+        <span>o</span>
+        <span>w</span>
+    </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="images/tr.png" alt="">
+        </div>
+
+        <form action="connect.php" method="Post">
+            <div class="inputBox">
+                <h3>Name</h3>
+                <input type="text" name="name" placeholder="Enter Name">
+            </div>
+            <div class="inputBox">
+                <h3>Gender</h3>
+                 
+            </div>
+            <div id="gen">
+            <input type="radio" name="gender" value="male">Male<br>
+            <input type="radio" name="gender" value="female">Female
+        </div>
+            <div class="inputBox">
+                <h3>Phone Number</h3>
+                <input type="tel" name="phone" placeholder="Enter Phone Number">
+            </div>
+            <div class="inputBox">
+                <h3>Email</h3>
+                <input type="email" name="email" placeholder="Enter Email">
+            </div>
+            <div class="inputBox">
+                <h3>Aadhar Card</h3>
+                <input type="file">
+            </div>
+            <input type="submit" class="btn" value="Register now">
+        </form>
+
+    </div>
+
+</section>
+
+<!-- Registration section ends -->
+
+<!-- packages section starts  -->
+
+<section class="packages" id="packages">
+
+    <h1 class="heading">
+        <span>p</span>
+        <span>a</span>
+        <span>c</span>
+        <span>k</span>
+        <span>a</span>
+        <span>g</span>
+        <span>e</span>
+        <span>s</span>
+    </h1>
+
+    <div class="box-container">
+
+        <div id="div2" class="box">
+            <img src="images/p-1.jpg" alt="">
+            <div class="content">
+                <h3> <i class="fas fa-map-marker-alt"></i> Mumbai </h3>
+                <p>Mumbai is not only the capital of Bollywood but is also one of the best cities in Maharashtra to visit if you are looking for a fresh start. Make your Mumbai trip plan happening with luxurious dinners, drives, and visits to many cool places.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <div class="price"> Rs.9,900/- <span>Rs.32,999/-</span> </div>
+                <a href="#" class="btn">book now</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/hyd.jpg" alt="">
+            <div class="content">
+                <h3> <i class="fas fa-map-marker-alt"></i> Hyderabad </h3>
+                <p>Steeped in history, thronged with people and buzzing with commerce, the Old City of Hyderabad is one of India's most evocative ancient quarters. Hyderabad is a city of history, beauty and a place with deep-rooted past.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <div class="price"> Rs.4,419/- <span>Rs.18,116/-</span> </div>
+                <a href="#" class="btn">book now</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/kol.jpg" alt="">
+            <div class="content">
+                <h3> <i class="fas fa-map-marker-alt"></i> Kolkata</h3>
+                <p>The ‘City of Joy,’ Kolkata in India is one of the most laid-back and beautiful cities in the country. The city is about 350-years old making everyone feel like they are in a perpetual state of celebration.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <div class="price"> Rs.7,890/- <span>Rs.21,000/-</span> </div>
+                <a href="#" class="btn">book now</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/my.jpg" alt="">
+            <div class="content">
+                <h3> <i class="fas fa-map-marker-alt"></i> Mysore</h3>
+                <p>Mysore, a beautiful and populous city of Karnataka, is located on the foothills of the Chamundi Hills. With various tourist attractions, Mysore invites all the travelers around the world to book a Mysore tour package to witness the charm of the heritage city</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <div class="price"> Rs.7,319/- <span>Rs.20,740/-</span> </div>
+                <a href="#" class="btn">book now</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/sik.jpg" alt="">
+            <div class="content">
+                <h3> <i class="fas fa-map-marker-alt"></i> Sikkim</h3>
+                <p>Stretching across the mighty summits of Eastern Himalayas, Sikkim is a picture-postcard travel destination. Book our Sikkim tour packages to enjoy vistas of alpine forests, snow-capped Himalayan peaks and a rugged landscape peppered with quaint villages and hilltop monasteries.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <div class="price">Rs.14,966/-<span>Rs.54,477/-</span> </div>
+                <a href="#" class="btn">book now</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="images/ko.jpg" alt="">
+            <div class="content">
+                <h3> <i class="fas fa-map-marker-alt"></i> Kochi </h3>
+                <p>Surrounded by the Arabian Sea and the Laccadive Sea, Kochi, or Cochin is referred to as the Queen of the Arabian Sea and is one of the largest spice trading centers of India. Be it summer or winter, Kerala is one of the top holiday destinations in India.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <div class="price"> Rs.3,732/- <span>Rs.47,922/-</span> </div>
+                <a href="#" class="btn">book now</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- packages section ends -->
+
+<!-- footer section  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>about us</h3>
+            <p>Founded in 2022, Let's Goooo..... is India’s leading online holiday marketplace bringing both the travelers, and trusted & expert travel agents on a common platform.</p>
+        </div>
+        <div class="box">
+            <h3>branch locations</h3>
+            <a href="#">Kerala</a>
+            <a href="#">Telengana</a>
+            <a href="#">Himachal Pradesh</a>
+            <a href="#">Karnataka</a>
+        </div>
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#">home</a>
+            <a href="#">book</a>
+            <a href="#">packages</a>
+        </div>
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#">facebook</a>
+            <a href="#">instagram</a>
+            <a href="#">twitter</a>
+            <a href="#">linkedin</a>
+        </div>
+
+    </div>
+
+    <h1 class="credit"> created by <span> Ms. Sahiti Lakkoju </span> | all rights reserved! </h1>
+
+</section>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
